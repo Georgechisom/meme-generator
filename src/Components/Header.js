@@ -2,6 +2,8 @@ import React from 'react'
 import '../styles/Header.css'
 
 function Header() {
+
+
   return (
     <header className='header'>
       <img src="./images/luxurybus.jpg" className='header-image' />
@@ -11,4 +13,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;
