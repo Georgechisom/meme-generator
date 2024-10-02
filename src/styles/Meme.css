@@ -1,5 +1,9 @@
 main {
-    padding: 36px;
+    padding: 10px 15px;
+    width: 60%;
+    align-items: center;
+    margin: 4% auto;
+    box-shadow: 0 15px 45px -25px #A626D3;
 }
 
 .form{
@@ -13,6 +17,9 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: grid;
     grid-template-columns: 1fr;
+    color: #A626D3;
+    font-weight: bold;
+    margin: 2% 0;
 }
 
 .label-span{
@@ -24,7 +31,8 @@ main {
     border: 2px solid #A626D3;
     text-indent: 10px;
     border-radius: 5px;
-    padding: 4px 4px;
+    padding: 8px 8px;
+    color: #A626D3;
 }
 
 .form-button {
@@ -36,15 +44,43 @@ main {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin: 2% 0;
-    padding: 2% 0;
-    align-items: center;
+    margin: 5% 0;
+    padding:3% 3%;
 }
 .button-span{
     padding: 2px 8px;
-    margin-top: 4px;
+    margin-top: -13px;
+    margin-left: -7%;
+    position: absolute;
 }
 
-.meme-image{
-    max-width: 100%;
+.meme{
+    border: 2px solid #A626D3;
+    margin-top: 10%;
+    box-sizing: content-box;
+    border-radius: 10px;
+    text-align: center;
+    /* overflow-x: hidden; */
+}
+
+.meme img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    /* border: 2px solid red; */
+    /* https://v2.scrimba.com/learn-react-c0e/~032 */
+}
+
+.meme-top-text{
+    margin-bottom: -2.5%;
+    position: relative;
+    color: #A626D3;
+    font-weight: bold;
+    font-size: 25px;
+}
+.meme-bottom-text{
+    margin-top: -2.5%;
+    color: #A626D3;
+    font-weight: bold;
+    font-size: 25px;
 }
