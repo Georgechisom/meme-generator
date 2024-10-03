@@ -1,3 +1,19 @@
+{/* <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header> */}
+
+
 // const [count, setCount] = React.useState(0);
 
 // const [star, setStar] = React.useState({
@@ -62,9 +78,62 @@
     }
 
     <input 
-                        id="top-text" 
-                        type="text" 
-                        className="form-input" 
-                        placeholder="top text"
-                        onChange={handleTopChange}
-                    />
+        id="top-text" 
+        type="text" 
+        className="form-input" 
+        placeholder="top text"
+        onChange={handleTopChange}
+    />
+
+    // const [memeDataArray, setmemeDataArray] = useState(MemesData)
+
+    // function getMemeImage() {
+    //     const memesArray = memeDataArray.data.memes
+    //     const randomNumber = Math.floor(Math.random() * memesArray.length)
+    //     const url = memesArray[randomNumber].url
+
+    //     setMeme(prevMeme => ({...prevMeme, randomImage: url}))
+
+    //     console.log(memeImage);
+    // }
+
+    // function handleChange(event) {
+    //     const {name, value} = event.target
+    //     setMeme(prevState => ({...prevState, [name]: value}))
+    //     console.log(meme);
+    // }
+
+    // function handleSubmit(event) {
+    //     event.preventDefault()
+    // };
+
+api 
+// https://swapi.dev/api/people/1
+// https://api.imgflip.com/get_memes
+
+
+const [starData, setStarData] = useState({})
+const [count, setCount] = useState(1)
+
+
+// useEffect(() => {
+//     fetch(`https://api.imgflip.com/get_memes`)
+//     .then(res => res.json())
+//     .then(data => setStarData(data))
+// }, [count])
+
+{/*         <div>
+                <pre>
+                    {JSON.stringify(starData, null, 2)}
+                </pre>
+                <p>this is count {count}</p>
+                <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+            </div> */}
+
+// wrong => useEffect(async () => {
+//     const res = await fetch(`https://api.imgflip.com/get_memes`)
+//     const data = await res.json()
+//     setMemeApiData(data.data.memes)
+// }, [])
+
+// https://v2.scrimba.com/learn-react-c0e/~032

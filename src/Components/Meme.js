@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import 'boxicons'
 import "../styles/Meme.css";
 import MemesData from "./MemesData";
@@ -13,12 +13,20 @@ export default function Meme() {
         randomImage: "https://media.istockphoto.com/id/1256314624/photo/young-caucasian-woman-with-funny-unusual-popular-emotions-and-gestures-isolated-on-white.jpg?s=612x612&w=0&k=20&c=AuRXVeFpsw-cY7s7p88BzwMlYbZtM77SocptEaEfXOc="
     })
 
-    const [memeDataArray, setmemeDataArray] = useState(MemesData)
+    const [memeApiData, setMemeApiData] = useState([])
+
+    useEffect(() => {
+        async function BringMeme() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setMemeApiData(data.data.memes)
+        }
+        BringMeme()
+    }, [])
 
     function getMemeImage() {
-        const memesArray = memeDataArray.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url
+        const randomNumber = Math.floor(Math.random() * memeApiData.length)
+        const url = memeApiData[randomNumber].url
 
         setMeme(prevMeme => ({...prevMeme, randomImage: url}))
 
@@ -35,11 +43,11 @@ export default function Meme() {
         event.preventDefault()
     };
 
-    const [starData, setStarData] = useState({})
+    console.log(`${JSON.stringify(memeApiData, null, 2)}`);
 
-    fetch("https://swapi.dev/api/people/1")
-    .then(res => res.json())
-    .then(data => console.log(data))
+    const myStyle = {
+        backgroundImage: `url(${meme.randomImage})`,
+    }
 
 
     
@@ -48,7 +56,7 @@ export default function Meme() {
         <main>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="form-label">
-                    <label htmlFor="top-text" className="label-span"> Top Text </label>
+                <label htmlFor="top-text" className="label-span"> Top Text </label>
                     <input 
                         id="top-text" 
                         type="text" 
@@ -83,18 +91,10 @@ export default function Meme() {
                 </button>
             </form>
 
-            <div className="meme">
+            <div className="meme" style={myStyle}>
                 <h2 className="meme-top-text">{meme.topText}</h2>
-                <img src={meme.randomImage} className="meme-image" />
                 <h2 className="meme-bottom-text">{meme.bottomText}</h2>
             </div>
-
-
-            {/* <div>
-                <pre>
-                    {JSON.stringify(starData, null, 2)}
-                </pre>
-            </div> */}
 
         </main>
     )

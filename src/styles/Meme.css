@@ -3,7 +3,8 @@ main {
     width: 60%;
     align-items: center;
     margin: 4% auto;
-    box-shadow: 0 15px 45px -25px #A626D3;
+    border: 2px solid #A626D3;
+    border-radius: 5%;
 }
 
 .form{
@@ -55,32 +56,32 @@ main {
 }
 
 .meme{
-    border: 2px solid #A626D3;
     margin-top: 10%;
     box-sizing: content-box;
     border-radius: 10px;
     text-align: center;
-    /* overflow-x: hidden; */
-}
-
-.meme img{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    /* border: 2px solid red; */
-    /* https://v2.scrimba.com/learn-react-c0e/~032 */
+    width: 50%;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 15px 45px -25px #A626D3;
+    background-size: contain;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60%;
 }
 
 .meme-top-text{
-    margin-bottom: -2.5%;
-    position: relative;
+    margin-bottom: 0%;
     color: #A626D3;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 25px;
 }
 .meme-bottom-text{
-    margin-top: -2.5%;
+    margin-top: 0%;
     color: #A626D3;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 25px;
 }
