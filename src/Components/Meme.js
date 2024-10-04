@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import 'boxicons'
 import "../styles/Meme.css";
-import MemesData from "./MemesData";
+import '../styles/Header.css'
 
 export default function Meme() {
 
@@ -30,20 +30,20 @@ export default function Meme() {
 
         setMeme(prevMeme => ({...prevMeme, randomImage: url}))
 
-        console.log(memeImage);
+        // console.log(memeImage);
     }
 
     function handleChange(event) {
         const {name, value} = event.target
         setMeme(prevState => ({...prevState, [name]: value}))
-        console.log(meme);
+        // console.log(meme);
     }
 
     function handleSubmit(event) {
         event.preventDefault()
     };
 
-    console.log(`${JSON.stringify(memeApiData, null, 2)}`);
+    // console.log(`${JSON.stringify(memeApiData, null, 2)}`);
 
     const myStyle = {
         backgroundImage: `url(${meme.randomImage})`,
@@ -56,7 +56,7 @@ export default function Meme() {
         <main>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="form-label">
-                <label htmlFor="top-text" className="label-span"> Top Text </label>
+                    <label htmlFor="top-text" className="label-span"> Top Text </label>
                     <input 
                         id="top-text" 
                         type="text" 
